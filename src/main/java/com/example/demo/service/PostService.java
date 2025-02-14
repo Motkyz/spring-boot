@@ -11,9 +11,9 @@ import java.util.List;
 public class PostService {
     List<Post> posts = new ArrayList<Post>(){
         {
-            add(new Post("first", new Date(), 5));
-            add(new Post("second", new Date(), 7));
-            add(new Post("third", new Date(), 8));
+            add(new Post(0l,"first", new Date(), 5));
+            add(new Post(1l,"second", new Date(), 7));
+            add(new Post(2l,"third", new Date(), 8));
         }
     };
 
@@ -22,6 +22,6 @@ public class PostService {
     }
 
     public void create(String text) {
-        posts.add(new Post(text, new Date(),0));
+        posts.add(new Post((long) posts.size(), text, new Date(),0));
     }
 }
