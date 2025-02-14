@@ -9,11 +9,19 @@ import java.util.List;
 
 @Service
 public class PostService {
+    List<Post> posts = new ArrayList<Post>(){
+        {
+            add(new Post("first", new Date(), 5));
+            add(new Post("second", new Date(), 7));
+            add(new Post("third", new Date(), 8));
+        }
+    };
+
     public List<Post> listAllPosts() {
-        List<Post> posts = new ArrayList<Post>();
-        posts.add(new Post("first", new Date(),5));
-        posts.add(new Post("second", new Date(), 7));
-        posts.add(new Post("third", new Date(), 8));
         return posts;
+    }
+
+    public void create(String text) {
+        posts.add(new Post(text, new Date(),0));
     }
 }
